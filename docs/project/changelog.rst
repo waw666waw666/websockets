@@ -38,6 +38,9 @@ Bug fixes
 * Fixed a regression in 17.3 where :meth:`~sync.connection.Connection.close` in
   the sync implementation could hang on Linux.
 
+* Set the default port of SOCKS proxies to 1080. ``socks5://proxy`` without an
+  explicit port used port 80, the default for HTTP proxies.
+
 .. _17.4:
 
 17.4

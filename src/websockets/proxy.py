@@ -73,7 +73,14 @@ def parse_proxy(proxy: str) -> Proxy:
 
     scheme = parsed.scheme
     host = parsed.hostname
-    port = parsed.port or (443 if parsed.scheme == "https" else 80)
+    if parsed.port is not None:
+        port = parsed.port
+    elif scheme == "https":
+        port = 443
+    elif scheme.startswith("socks"):
+        port = 1080
+    else:
+        port = 80
     username = parsed.username
     password = parsed.password
     # urllib.parse.urlparse accepts URLs with a username but without a

@@ -23,6 +23,34 @@ VALID_PROXIES = [
         Proxy("http", "proxy", 80, None, None),
     ),
     (
+        "https://proxy",
+        Proxy("https", "proxy", 443, None, None),
+    ),
+    (
+        "socks5://proxy",
+        Proxy("socks5", "proxy", 1080, None, None),
+    ),
+    (
+        "socks5h://proxy",
+        Proxy("socks5h", "proxy", 1080, None, None),
+    ),
+    (
+        "socks4://proxy",
+        Proxy("socks4", "proxy", 1080, None, None),
+    ),
+    (
+        "socks4a://proxy",
+        Proxy("socks4a", "proxy", 1080, None, None),
+    ),
+    (
+        "socks5://proxy:1080",
+        Proxy("socks5", "proxy", 1080, None, None),
+    ),
+    (
+        "socks5h://proxy:9050",
+        Proxy("socks5h", "proxy", 9050, None, None),
+    ),
+    (
         "http://proxy:8080/",
         Proxy("http", "proxy", 8080, None, None),
     ),
